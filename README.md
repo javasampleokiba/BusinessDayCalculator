@@ -1,30 +1,30 @@
 # BusinessDayCalculator
-BusinessDayCalculator�́A�c�Ɠ������v�Z����Java���C�u�����ł��B<br>
-����A���{�̗�ɂ̂ݑΉ����Ă���A�u�����̏j���Ɋւ���@���v�ɏ]���A�x�����������肵�܂��B
+BusinessDayCalculatorは、営業日数を計算するJavaライブラリです。<br>
+現状、日本の暦にのみ対応しており、「国民の祝日に関する法律」に従い、休日を自動判定します。
 
 ## Features
-- �w�肵�����t���u�����̏j���v�u�U�֋x���v�u�����̋x���v�ł��邩�̔���A����ыx�������擾����
-- �w�肵���N�i���j�̂��ׂẮu�����̏j���v�A�u�U�֋x���v�A�u�����̋x���v�̓��t���擾����
-- �Q�̈قȂ���t�̊Ԃ̉c�Ɠ������J�E���g����
-- ������t����n�c�Ɠ���̓��t���擾����
-- �����_�i����/�����Ȃǁj����̑�n�c�Ɠ��̓��t���擾����
+- 指定した日付が「国民の祝日」「振替休日」「国民の休日」であるかの判定、および休日名を取得する
+- 指定した年（月）のすべての「国民の祝日」、「振替休日」、「国民の休日」の日付を取得する
+- ２つの異なる日付の間の営業日数をカウントする
+- ある日付からn営業日後の日付を取得する
+- ある基準点（月初/月末など）からの第n営業日の日付を取得する
 
 ## Requirements
 Java 6 or later<br>
-�i�e�X�g�����s�������ꍇ�́AJava 8 or later, JUnit5�j
+（テストを実行したい場合は、Java 8 or later, JUnit5）
 
 ## Usage
-���L�u���O���Q�Ƃ��Ă��������B<br>
-[[Java][�T���v���R�[�h] �����̏j���𔻒肷��](http://javasampleokiba.blog.fc2.com/blog-entry-19.html)<br>
-[[Java][�T���v���R�[�h] �����̏j���𔻒肷��(��)](http://javasampleokiba.blog.fc2.com/blog-entry-20.html)<br>
-[[Java][�T���v���R�[�h] �c�Ɠ������v�Z����](http://javasampleokiba.blog.fc2.com/blog-entry-21.html)
+下記ブログを参照してください。<br>
+[[Java][サンプルコード] 国民の祝日を判定する](http://javasampleokiba.blog.fc2.com/blog-entry-19.html)<br>
+[[Java][サンプルコード] 国民の祝日を判定する(続)](http://javasampleokiba.blog.fc2.com/blog-entry-20.html)<br>
+[[Java][サンプルコード] 営業日数を計算する](http://javasampleokiba.blog.fc2.com/blog-entry-21.html)
 
 ## Note
-- �c���c���s���ɔ����x���ɂ͑Ή����Ă��܂���
-- �u�����̏j���Ɋւ���@���v�{�s�O�̏j���ɂ͑Ή����Ă��܂���
-- ����̖@�������ɂ�萳��ɓ��삵�Ȃ��Ȃ�\��������܂��i�A�b�v�f�[�g�Ő����X�V�\��ł��j
-- 2151�N�ȍ~�́u�t���̓��v�A�u�H���̓��v�͋��߂邱�Ƃ��ł��܂���
-- �����́u�����̏j���v���d�Ȃ�ꍇ�́A�����ꂩ����̏�񂵂��擾�ł��܂���i����ŏ��ɏj�����d������̂�2876�N�Ɨ\������Ă��܂��j
+- 皇室慶弔行事に伴う休日には対応していません
+- 「国民の祝日に関する法律」施行前の祝日には対応していません
+- 今後の法律改正により正常に動作しなくなる可能性があります（アップデートで随時更新予定です）
+- 2151年以降の「春分の日」、「秋分の日」は求めることができません
+- 複数の「国民の祝日」が重なる場合は、いずれか一方の情報しか取得できません（今後最初に祝日が重複するのは2876年と予測されています）
 
 ## License
-LICENSE���Q�Ƃ��Ă��������B
+[LICENSE](https://github.com/javasampleokiba/BusinessDayCalculator/blob/master/LICENSE)を参照してください。
