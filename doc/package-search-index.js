@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"javasampleokiba.businessdaycalculator"},{"l":"javasampleokiba.businessdaycalculator.holiday"},{"l":"javasampleokiba.businessdaycalculator.resolver"},{"l":"すべてのパッケージ","url":"allpackages-index.html"}]
+packageSearchIndex = [{"l":"javasampleokiba.businessdaycalculator"},{"l":"javasampleokiba.businessdaycalculator.holiday"},{"l":"javasampleokiba.businessdaycalculator.resolver"},{"l":"すべてのパッケージ","u":"allpackages-index.html"}];updateSearchResults();

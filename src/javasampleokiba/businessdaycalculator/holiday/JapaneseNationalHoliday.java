@@ -3,9 +3,9 @@ package javasampleokiba.businessdaycalculator.holiday;
 import java.util.Calendar;
 
 /**
- * 日本の「国民の祝日」を表す列挙型クラス。
+ * 日本の「国民の祝日」を表す列挙型クラス.
  * 
- * [注意事項]
+ * <p>[注意事項]</p>
  * <ul>
  * <li>今後の法律改正により正常に動作しなくなる可能性があります。</li>
  * <li>2151年以降の「春分の日」、「秋分の日」は求めることができません。</li>
@@ -118,6 +118,8 @@ public enum JapaneseNationalHoliday {
                 return toCalendar(year, 7, 20);
             } else if (year == 2020) {
                 return toCalendar(year, 7, 23);
+            } else if (year == 2021) {
+                return toCalendar(year, 7, 22);
             } else if (2003 <= year) {
                 return mondayOf(year, 7, 3);
             }
@@ -130,6 +132,8 @@ public enum JapaneseNationalHoliday {
         public Calendar dateOf(int year) {
             if (year == 2020) {
                 return toCalendar(year, 8, 10);
+            } else if (year == 2021) {
+                return toCalendar(year, 8, 8);
             } else if (2016 <= year) {
                 return toCalendar(year, 8, 11);
             }
@@ -176,7 +180,9 @@ public enum JapaneseNationalHoliday {
         public Calendar dateOf(int year) {
             if (year == 2020) {
                 return toCalendar(year, 7, 24);
-            } else if (2021 <= year) {
+            } else if (year == 2021) {
+                return toCalendar(year, 7, 23);
+            } else if (2022 <= year) {
                 return mondayOf(year, 10, 2);
             }
             return null;

@@ -368,15 +368,17 @@ public class JapaneseNationalHolidayTest extends TestBase {
             for (int year = 1996; year <= 2002; year++) {
                 assertDateEquals(toCalendar(year, 7, 20), JapaneseNationalHoliday.MarineDay.dateOf(year));
             }
-            // 2020年のみ東京五輪・パラリンピック特措法に基づき日付が異なる
+            // 東京五輪・パラリンピック特措法に基づき2020年は日付が異なる
             assertDateEquals(toCalendar(2020, 7, 23), JapaneseNationalHoliday.MarineDay.dateOf(2020));
+            // 改正 東京五輪・パラリンピック特措法に基づき2021年は日付が異なる
+            assertDateEquals(toCalendar(2021, 7, 22), JapaneseNationalHoliday.MarineDay.dateOf(2021));
             // 曜日固定後
             assertDateEquals(toCalendar(2003, 7, 21), JapaneseNationalHoliday.MarineDay.dateOf(2003));
             assertDateEquals(toCalendar(2004, 7, 19), JapaneseNationalHoliday.MarineDay.dateOf(2004));
             assertDateEquals(toCalendar(2005, 7, 18), JapaneseNationalHoliday.MarineDay.dateOf(2005));
             assertDateEquals(toCalendar(2006, 7, 17), JapaneseNationalHoliday.MarineDay.dateOf(2006));
             assertDateEquals(toCalendar(2019, 7, 15), JapaneseNationalHoliday.MarineDay.dateOf(2019));
-            assertDateEquals(toCalendar(2021, 7, 19), JapaneseNationalHoliday.MarineDay.dateOf(2021));
+            assertDateEquals(toCalendar(2022, 7, 18), JapaneseNationalHoliday.MarineDay.dateOf(2022));
             assertDateEquals(toCalendar(2098, 7, 21), JapaneseNationalHoliday.MarineDay.dateOf(2098));
             assertDateEquals(toCalendar(2099, 7, 20), JapaneseNationalHoliday.MarineDay.dateOf(2099));
             assertDateEquals(toCalendar(2100, 7, 19), JapaneseNationalHoliday.MarineDay.dateOf(2100));
@@ -388,8 +390,11 @@ public class JapaneseNationalHolidayTest extends TestBase {
             // 適用開始後
             for (int year = 2016; year <= MAX_YEAR; year++) {
                 if (year == 2020) {
-                    // 2020年のみ東京五輪・パラリンピック特措法に基づき日付が異なる
+                    // 東京五輪・パラリンピック特措法に基づき2020年は日付が異なる
                     assertDateEquals(toCalendar(year, 8, 10), JapaneseNationalHoliday.MountainDay.dateOf(year));
+                } else if (year == 2021) {
+                    // 改正 東京五輪・パラリンピック特措法に基づき2021年は日付が異なる
+                    assertDateEquals(toCalendar(year, 8, 8), JapaneseNationalHoliday.MountainDay.dateOf(year));
                 } else {
                     assertDateEquals(toCalendar(year, 8, 11), JapaneseNationalHoliday.MountainDay.dateOf(year));
                 }
@@ -446,10 +451,11 @@ public class JapaneseNationalHolidayTest extends TestBase {
         {
             // 適用開始前
             assertEquals(null, JapaneseNationalHoliday.SportsDay.dateOf(2019));
-            // 2020年のみ東京五輪・パラリンピック特措法に基づき日付が異なる
+            // 東京五輪・パラリンピック特措法に基づき2020年は日付が異なる
             assertDateEquals(toCalendar(2020, 7, 24), JapaneseNationalHoliday.SportsDay.dateOf(2020));
+            // 改正 東京五輪・パラリンピック特措法に基づき2021年は日付が異なる
+            assertDateEquals(toCalendar(2021, 7, 23), JapaneseNationalHoliday.SportsDay.dateOf(2021));
             // 適用開始後
-            assertDateEquals(toCalendar(2021, 10, 11), JapaneseNationalHoliday.SportsDay.dateOf(2021));
             assertDateEquals(toCalendar(2022, 10, 10), JapaneseNationalHoliday.SportsDay.dateOf(2022));
             assertDateEquals(toCalendar(2023, 10, 9), JapaneseNationalHoliday.SportsDay.dateOf(2023));
             assertDateEquals(toCalendar(2098, 10, 13), JapaneseNationalHoliday.SportsDay.dateOf(2098));
@@ -643,10 +649,14 @@ public class JapaneseNationalHolidayTest extends TestBase {
                 assertTrue(JapaneseNationalHoliday.MarineDay.is(toCalendar(year, 7, 20)));
                 assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(year, 7, 21)));
             }
-            // 2020年のみ東京五輪・パラリンピック特措法に基づき日付が異なる
+            // 東京五輪・パラリンピック特措法に基づき2020年は日付が異なる
             assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2020, 7, 22)));
             assertTrue(JapaneseNationalHoliday.MarineDay.is(toCalendar(2020, 7, 23)));
             assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2020, 7, 24)));
+            // 改正 東京五輪・パラリンピック特措法に基づき2021年は日付が異なる
+            assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2021, 7, 21)));
+            assertTrue(JapaneseNationalHoliday.MarineDay.is(toCalendar(2021, 7, 22)));
+            assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2021, 7, 23)));
             // 曜日固定後
             assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2003, 7, 20)));
             assertTrue(JapaneseNationalHoliday.MarineDay.is(toCalendar(2003, 7, 21)));
@@ -663,9 +673,9 @@ public class JapaneseNationalHolidayTest extends TestBase {
             assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2019, 7, 14)));
             assertTrue(JapaneseNationalHoliday.MarineDay.is(toCalendar(2019, 7, 15)));
             assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2019, 7, 16)));
-            assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2021, 7, 18)));
-            assertTrue(JapaneseNationalHoliday.MarineDay.is(toCalendar(2021, 7, 19)));
-            assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2021, 7, 20)));
+            assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2022, 7, 17)));
+            assertTrue(JapaneseNationalHoliday.MarineDay.is(toCalendar(2022, 7, 18)));
+            assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2022, 7, 19)));
             assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2098, 7, 20)));
             assertTrue(JapaneseNationalHoliday.MarineDay.is(toCalendar(2098, 7, 21)));
             assertFalse(JapaneseNationalHoliday.MarineDay.is(toCalendar(2098, 7, 22)));
@@ -683,10 +693,15 @@ public class JapaneseNationalHolidayTest extends TestBase {
             // 適用開始後
             for (int year = 2016; year <= MAX_YEAR; year++) {
                 if (year == 2020) {
-                    // 2020年のみ東京五輪・パラリンピック特措法に基づき日付が異なる
+                    // 東京五輪・パラリンピック特措法に基づき2020年は日付が異なる
                     assertFalse(JapaneseNationalHoliday.MountainDay.is(toCalendar(year, 8, 9)));
                     assertTrue(JapaneseNationalHoliday.MountainDay.is(toCalendar(year, 8, 10)));
                     assertFalse(JapaneseNationalHoliday.MountainDay.is(toCalendar(year, 8, 11)));
+                } else if (year == 2021) {
+                    // 改正 東京五輪・パラリンピック特措法に基づき2021年は日付が異なる
+                    assertFalse(JapaneseNationalHoliday.MountainDay.is(toCalendar(year, 8, 7)));
+                    assertTrue(JapaneseNationalHoliday.MountainDay.is(toCalendar(year, 8, 8)));
+                    assertFalse(JapaneseNationalHoliday.MountainDay.is(toCalendar(year, 8, 9)));
                 } else {
                     assertFalse(JapaneseNationalHoliday.MountainDay.is(toCalendar(year, 8, 10)));
                     assertTrue(JapaneseNationalHoliday.MountainDay.is(toCalendar(year, 8, 11)));
@@ -781,14 +796,15 @@ public class JapaneseNationalHolidayTest extends TestBase {
         {
             // 適用開始前
             assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2019, 10, 14)));
-            // 2020年のみ東京五輪・パラリンピック特措法に基づき日付が異なる
+            // 東京五輪・パラリンピック特措法に基づき2020年は日付が異なる
             assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2020, 7, 23)));
             assertTrue(JapaneseNationalHoliday.SportsDay.is(toCalendar(2020, 7, 24)));
             assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2020, 7, 25)));
+            // 改正 東京五輪・パラリンピック特措法に基づき2021年は日付が異なる
+            assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2021, 7, 22)));
+            assertTrue(JapaneseNationalHoliday.SportsDay.is(toCalendar(2021, 7, 23)));
+            assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2021, 7, 24)));
             // 適用開始後
-            assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2021, 10, 10)));
-            assertTrue(JapaneseNationalHoliday.SportsDay.is(toCalendar(2021, 10, 11)));
-            assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2021, 10, 12)));
             assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2022, 10, 9)));
             assertTrue(JapaneseNationalHoliday.SportsDay.is(toCalendar(2022, 10, 10)));
             assertFalse(JapaneseNationalHoliday.SportsDay.is(toCalendar(2022, 10, 11)));

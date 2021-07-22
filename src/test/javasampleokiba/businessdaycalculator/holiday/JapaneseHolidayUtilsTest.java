@@ -887,11 +887,12 @@ public class JapaneseHolidayUtilsTest extends TestBase {
         holidayData.add(new Object[] {toCalendar(year, 5, 3),    "Œ›–@‹L”O“ú"});
         holidayData.add(new Object[] {toCalendar(year, 5, 4),    "‚İ‚Ç‚è‚Ì“ú"});
         holidayData.add(new Object[] {toCalendar(year, 5, 5),    "‚±‚Ç‚à‚Ì“ú"});
-        holidayData.add(new Object[] {toCalendar(year, 7, 19),   "ŠC‚Ì“ú"});
-        holidayData.add(new Object[] {toCalendar(year, 8, 11),   "R‚Ì“ú"});
+        holidayData.add(new Object[] {toCalendar(year, 7, 22),   "ŠC‚Ì“ú"});
+        holidayData.add(new Object[] {toCalendar(year, 8, 8),    "R‚Ì“ú"});
+        holidayData.add(new Object[] {toCalendar(year, 8, 9),    "U‘Ö‹x“ú"});
         holidayData.add(new Object[] {toCalendar(year, 9, 20),   "Œh˜V‚Ì“ú"});
         holidayData.add(new Object[] {toCalendar(year, 9, 23),   "H•ª‚Ì“ú"});
-        holidayData.add(new Object[] {toCalendar(year, 10, 11),  "ƒXƒ|[ƒc‚Ì“ú"});
+        holidayData.add(new Object[] {toCalendar(year, 7, 23),   "ƒXƒ|[ƒc‚Ì“ú"});
         holidayData.add(new Object[] {toCalendar(year, 11, 3),   "•¶‰»‚Ì“ú"});
         holidayData.add(new Object[] {toCalendar(year, 11, 23),  "‹Î˜JŠ´Ó‚Ì“ú"});
         year = 2022;

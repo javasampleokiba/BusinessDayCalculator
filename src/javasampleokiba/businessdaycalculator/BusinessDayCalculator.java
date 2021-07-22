@@ -5,7 +5,7 @@ import java.util.Calendar;
 import javasampleokiba.businessdaycalculator.resolver.DayOffResolver;
 
 /**
- * 営業日数を計算するクラス
+ * 営業日数を計算するクラス.
  */
 public class BusinessDayCalculator {
 

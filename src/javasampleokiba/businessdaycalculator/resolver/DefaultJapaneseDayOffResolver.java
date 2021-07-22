@@ -5,7 +5,7 @@ import java.util.Calendar;
 import javasampleokiba.businessdaycalculator.holiday.JapaneseHolidayUtils;
 
 /**
- * 指定された日付が日本の一般的な休日か判定するクラス。
+ * 指定された日付が日本の一般的な休日か判定するクラス.
  * 
  * 土日、および国民の祝日、振替休日、国民の休日を休日と判定します。
  */
